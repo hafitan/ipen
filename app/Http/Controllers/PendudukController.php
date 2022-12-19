@@ -37,7 +37,19 @@ class PendudukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+            'alamat' => 'required',
+            'no_tlp' => 'required',
+        ]);
+
+        Penduduk::create($request->all());
+
+        return redirect()->route('penduduk.index')
+                        ->with('success','penduduk created successfully.');
     }
 
     /**
@@ -59,7 +71,7 @@ class PendudukController extends Controller
      */
     public function edit(Penduduk $penduduk)
     {
-        //
+        return view('admin.penduduk.edit',compact('penduduk'));
     }
 
     /**
@@ -71,7 +83,19 @@ class PendudukController extends Controller
      */
     public function update(Request $request, Penduduk $penduduk)
     {
-        //
+        $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+            'alamat' => 'required',
+            'no_tlp' => 'required',
+        ]);
+
+        $penduduk->update($request->all());
+
+        return redirect()->route('admin.penduduk.index')
+                        ->with('success','penduduk updated successfully');
     }
 
     /**
@@ -82,6 +106,9 @@ class PendudukController extends Controller
      */
     public function destroy(Penduduk $penduduk)
     {
-        //
+        $penduduk->delete();
+
+        return redirect()->route('penduduk.index')
+                        ->with('success','penduduk deleted successfully');
     }
 }

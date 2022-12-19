@@ -16,24 +16,40 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nik</th>
                             <th>Nama</th>
                             <th>Rt</th>
                             <th>Rw</th>
                             <th>Alamat</th>
                             <th>No HP</th>
+                            <th width="200px">Action</th>
                         </tr>
                     </thead>
+                    @php $no = 1; @endphp
                     @foreach ($penduduk as $penduduk)
                         <tbody>
                             <tr>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $penduduk->nik }}</td>
                                 <td>{{ $penduduk->nama }}</td>
                                 <td>{{ $penduduk->rt }}</td>
                                 <td>{{ $penduduk->rw }}</td>
                                 <td>{{ $penduduk->alamat }}</td>
                                 <td>{{ $penduduk->no_tlp }}</td>
-                            </tr>
+                            <td>
+                                <form action="{{ route('penduduk.destroy',$penduduk->id) }}" method="POST">
+
+                                    <a class="btn btn-primary" href="{{ route('penduduk.edit',$penduduk->id) }}">Edit</a>
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" onclick="return confirm('Are you sure you want to delete {{ $penduduk->nama }}?');" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+
                         </tbody>
                     @endforeach
                 </table>
@@ -53,15 +69,53 @@
           </button>
         </div>
         <form action="{{ route('penduduk.store') }}" method="post">
+          @csrf
           <div class="modal-body">
-            <div class="form-group">
-              <label for="">NIK</label>
-              <input type="number" min="0" name="nik" id="" class="form-control">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>NIK:</strong>
+                  <input type="number" name="nik" class="form-control" placeholder="NIK" min="0">
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Nama:</strong>
+                  <input type="text" name="nama" class="form-control" placeholder="Nama">
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Rt:</strong>
+                  <input type="number" name="rt" class="form-control" placeholder="rt" min="0">
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Rw:</strong>
+                  <input type="number" name="rw" class="form-control" placeholder="rw" min="0">
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Alamat:</strong>
+                  {{-- <input type="number" name="rt" class="form-control" placeholder="rt" min="0"> --}}
+                  <textarea name="alamat" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>No HP:</strong>
+                  <input type="number" name="no_tlp" class="form-control" placeholder="+62" min="0">
+              </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </form>
       </div>
