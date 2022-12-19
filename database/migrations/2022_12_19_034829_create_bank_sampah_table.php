@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('berat_sampah');
             $table->string('harga_per_kg');
+            $table->string('total_harga'); //ditambah total harga biar ada totalannya
             $table->date('tanggal_setor');
             $table->timestamps();
         });
