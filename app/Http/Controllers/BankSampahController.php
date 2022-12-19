@@ -14,7 +14,9 @@ class BankSampahController extends Controller
      */
     public function index()
     {
-        //
+        $bankSampah = BankSampah::all();
+
+        return view('admin.bankSampah.index', compact('bankSampah'));
     }
 
     /**

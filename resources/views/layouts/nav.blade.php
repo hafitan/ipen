@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -41,14 +41,14 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="/penduduk">
+        <a class="nav-link" href="penduduk">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Penduduk</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/bankSampah">
+        <a class="nav-link" href="/bank-sampah">
             <i class="fas fa-fw fa-table"></i>
             <span>Bank Sampah</span></a>
     </li>
@@ -62,7 +62,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/pengajuanSurat">
+        <a class="nav-link" href="/pengajuan-surat">
             <i class="fas fa-fw fa-table"></i>
             <span>Pengajuan Surat</span></a>
     </li>

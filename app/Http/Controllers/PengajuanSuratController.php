@@ -14,7 +14,9 @@ class PengajuanSuratController extends Controller
      */
     public function index()
     {
-        //
+        $pengajuanSurat = PengajuanSurat::all();
+
+        return view('admin.pengajuanSurat.index', compact('pengajuanSurat'));
     }
 
     /**

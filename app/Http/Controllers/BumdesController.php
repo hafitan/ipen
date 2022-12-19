@@ -14,7 +14,9 @@ class BumdesController extends Controller
      */
     public function index()
     {
-        //
+        $bumdes = Bumdes::all();
+
+        return view('admin.bumdes.index',compact('bumdes'));
     }
 
     /**
