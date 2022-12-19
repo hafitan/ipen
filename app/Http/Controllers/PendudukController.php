@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penduduk;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PendudukController extends Controller
 {
@@ -46,7 +48,28 @@ class PendudukController extends Controller
             'no_tlp' => 'required',
         ]);
 
+        //kalau mau pakai yang multiple  yang  bawah sama yang atas di kasih tag komentar
         Penduduk::create($request->all());
+
+        // val ini untuk multiple store
+
+        // Penduduk::create([
+        //     'nik' => $request->nik,
+        //     'nama' => $request->nama,
+        //     'rt' => $request->rt,
+        //     'rw' => $request->rw,
+        //     'alamat' => $request->alamat,
+        //     'no_tlp' => $request->no_tlp,
+        // ]);
+
+
+        // User::create([
+        //     'username' =>$request->nik,
+        //     'password' => Hash::make($request->nik),
+        //     'name' => $request->nama,
+        //     'level' => 'Penduduk',
+        // ]);
+
 
         return redirect()->route('penduduk.index')
                         ->with('success','penduduk created successfully.');
