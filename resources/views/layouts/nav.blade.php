@@ -41,30 +41,37 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/penduduk">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Penduduk</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/bankSampah">
             <i class="fas fa-fw fa-table"></i>
             <span>Bank Sampah</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/bumdes">
             <i class="fas fa-fw fa-table"></i>
             <span>Bumdes</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/pengajuanSurat">
             <i class="fas fa-fw fa-table"></i>
             <span>Pengajuan Surat</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="users">
+            <i class="fas fa-fw fa-table"></i>
+            <span>User</span></a>
     </li>
 
     <!-- Divider -->

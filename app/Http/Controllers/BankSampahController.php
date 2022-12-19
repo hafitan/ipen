@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\BankSampah;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class BankSampahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return view('admin.users.index', compact('users'));
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\BankSampah  $bankSampah
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(BankSampah $bankSampah)
     {
         //
     }
@@ -54,10 +52,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\BankSampah  $bankSampah
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BankSampah $bankSampah)
     {
         //
     }
@@ -66,10 +64,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\BankSampah  $bankSampah
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BankSampah $bankSampah)
     {
         //
     }
@@ -77,10 +75,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\BankSampah  $bankSampah
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(BankSampah $bankSampah)
     {
         //
     }

@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BankSampahController;
+use App\Http\Controllers\BumdesController;
+use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\PengajuanSuratController;
+use App\Http\Controllers\UserController;
+use App\Models\PengajuanSurat;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +26,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('users', UserController::class);
+Route::resource('penduduk', PendudukController::class);
+Route::resource('bumdes', BumdesController::class);
+Route::resource('bank-sampah', BankSampahController::class);
+Route::resource('pengajuan-surat', PengajuanSuratController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logout', [LoginController::class, 'logout']);
