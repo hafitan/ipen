@@ -19,6 +19,8 @@ class Role
 
         if (auth()->user()->role == $role) {
             return $next($request);
+        }else if(auth()->user()->role == 'admin'){
+        return $next($request);
         }
         return redirect()->back();
     }
