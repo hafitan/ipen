@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\BankSampah;
+use App\Models\Penduduk;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class BankSampahController extends Controller
 {
@@ -15,8 +17,9 @@ class BankSampahController extends Controller
     public function index()
     {
         $bankSampah = BankSampah::all();
+        $penduduk = Penduduk::all();
 
-        return view('admin.bankSampah.index', compact('bankSampah'));
+        return view('admin.bankSampah.index', compact('bankSampah', 'penduduk'));
     }
 
     /**
@@ -37,7 +40,34 @@ class BankSampahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'nik' => 'required',
+        //     'nama' => 'required',
+        //     'rt' => 'required',
+        //     'rw' => 'required',
+        //     'alamat' => 'required',
+        //     'berat_sampah' => 'required',
+        //     'harga_per_kg' => 'required',
+        //     'total_harga' => 'required',
+        // ]);
+
+        $r = BankSampah::create([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'alamat' => $request->alamat,
+            'berat_sampah' => $request->berat_sampah,
+            'harga_per_kg' => $request->harga_per_kg,
+            'total_harga' => $request->berat_sampah * $request->harga_per_kg,
+            'tanggal_setor' => Carbon::now()
+        ]);
+
+        // dd($r);
+
+        return redirect()->route('bank-sampah.index')
+                        ->with('success','bank sampah created successfully.');
+
     }
 
     /**

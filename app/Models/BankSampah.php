@@ -18,6 +18,7 @@ class BankSampah extends Model
         'alamat',
         'berat_sampah',
         'harga_per_kg',
-        'tanggal_setor'
+        'tanggal_setor',
+        'total_harga'
     ];
 }

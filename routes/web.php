@@ -20,16 +20,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
 
 Auth::routes();
 
-Route::resource('users', UserController::class);
-Route::resource('penduduk', PendudukController::class);
-Route::resource('bumdes', BumdesController::class);
-Route::resource('bank-sampah', BankSampahController::class);
-Route::resource('pengajuan-surat', PengajuanSuratController::class);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
+    Route::resource('users', UserController::class);
+    Route::resource('penduduk', PendudukController::class);
+    Route::resource('bumdes', BumdesController::class);
+    Route::resource('bank-sampah', BankSampahController::class);
+    Route::resource('pengajuan-surat', PengajuanSuratController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
