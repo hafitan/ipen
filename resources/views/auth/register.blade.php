@@ -45,6 +45,7 @@
                                 {{-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"> --}}
                                 <select name="role" id="" class="form-select">
                                     <option>PILIH</option>
+                                    <option value="penduduk">Penduduk</option>
                                     <option value="bumdes">Bumdes</option>
                                     <option value="banksampah">BankSampah</option>
                                     <option value="admin">Admin</option>
