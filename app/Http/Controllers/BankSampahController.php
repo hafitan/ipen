@@ -89,7 +89,8 @@ class BankSampahController extends Controller
      */
     public function edit(BankSampah $bankSampah)
     {
-        //
+        $penduduk = Penduduk::all();
+        return view('admin.bankSampah.edit', compact('bankSampah', 'penduduk'));
     }
 
     /**
@@ -101,7 +102,20 @@ class BankSampahController extends Controller
      */
     public function update(Request $request, BankSampah $bankSampah)
     {
-        //
+        $bankSampah->update([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            'alamat' => $request->alamat,
+            'berat_sampah' => $request->berat_sampah,
+            'harga_per_kg' => $request->harga_per_kg,
+            'total_harga' => $request->berat_sampah * $request->harga_per_kg,
+            // 'tanggal_setor' => Carbon::now()
+        ]);
+        dd($bankSampah);
+        return redirect()->route('bank-sampah.index')
+                        ->with('success','bank sampah updated successfully.');
     }
 
     /**
@@ -112,6 +126,8 @@ class BankSampahController extends Controller
      */
     public function destroy(BankSampah $bankSampah)
     {
-        //
+        $bankSampah->delete();
+
+        return redirect()->route('bank-sampah.index');
     }
 }

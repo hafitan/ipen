@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -61,11 +61,11 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="/pengajuan-surat">
             <i class="fas fa-fw fa-table"></i>
             <span>Pengajuan Surat</span></a>
-    </li>
+    </li> --}}
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">

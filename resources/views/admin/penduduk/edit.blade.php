@@ -45,7 +45,7 @@
                     <strong>NIK:</strong>
                     <input type="number" name="nik" value="{{ $penduduk->nik }}" class="form-control" placeholder="NIK" min="0">
                 </div>
-              </div>
+            </div>
 
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">

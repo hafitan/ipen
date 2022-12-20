@@ -24,8 +24,8 @@
                             <th>Alamat</th>
                             <th>Berat sampah</th>
                             <th>Harga per kg</th>
-                            <th>Tanggal setor</th>
                             <th>Total harga</th>
+                            <th>Tanggal setor</th>
                             <th width="200px">Action</th>
                         </tr>
                     </thead>
@@ -41,8 +41,8 @@
                                 <td>{{ $bank->alamat }}</td>
                                 <td>{{ $bank->berat_sampah }}</td>
                                 <td>{{ $bank->harga_per_kg }}</td>
-                                <td>{{ $bank->tanggal_setor }}</td>
                                 <td>{{ $bank->total_harga }}</td>
+                                <td>{{ $bank->tanggal_setor }}</td>
                             <td>
                                 <form action="{{ route('bank-sampah.destroy',$bank->id) }}" method="POST">
 
@@ -94,13 +94,12 @@
               <div class="form-group">
                   <strong>Nama:</strong>
                   {{-- <input type="text" name="nama" class="form-control" placeholder="Nama"> --}}
-                  <select class="form-control" id="">
+                  <select name="nama" class="form-control" id="">
                     <option value="">--pilih--</option>
                     @foreach ($penduduk as $pendu)
-                        <option value="" name="nama">{{ $pendu->nama }}</option>
+                        <option name="nama">{{ $pendu->nama }}</option>
                     @endforeach
                   </select>
-
               </div>
             </div>
 

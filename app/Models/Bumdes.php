@@ -9,7 +9,7 @@ class Bumdes extends Model
 {
     use HasFactory;
     protected $table = 'bumdes';
-    protected $fillabel = [
+    protected $fillable = [
         'nik',
         'nama',
         'rt',
