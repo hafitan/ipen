@@ -23,15 +23,27 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     });
-    Route::resource('users', UserController::class);
-    Route::resource('penduduk', PendudukController::class);
-    Route::resource('bumdes', BumdesController::class);
-    Route::resource('bank-sampah', BankSampahController::class);
-    Route::resource('pengajuan-surat', PengajuanSuratController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/logout', [LoginController::class, 'logout']);
+});
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('users', UserController::class);
+    Route::resource('pengajuan-surat', PengajuanSuratController::class);
+});
+
+Route::middleware(['auth', 'role:penduduk'])->group(function () {
+    Route::resource('penduduk', PendudukController::class);
+});
+
+Route::middleware(['auth', 'role:banksampah'])->group(function () {
+    Route::resource('bank-sampah', BankSampahController::class);
+});
+
+Route::middleware(['auth', 'role:bumdes'])->group(function () {
+    Route::resource('bumdes', BumdesController::class);
 });
