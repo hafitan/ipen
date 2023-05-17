@@ -6,6 +6,7 @@ use App\Http\Controllers\BumdesController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PengajuanSuratController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewController;
 use App\Models\PengajuanSurat;
 use Illuminate\Support\Facades\Route;
 
@@ -46,4 +47,9 @@ Route::middleware(['auth', 'role:banksampah'])->group(function () {
 
 Route::middleware(['auth', 'role:bumdes'])->group(function () {
     Route::resource('bumdes', BumdesController::class);
+});
+Route::middleware(['auth', 'role:user'])->group(function() {
+    Route::get('bumdes-view', [ViewController::class, 'bumdes']);
+    Route::get('penduduk-view', [ViewController::class, 'penduduk']);
+    Route::get('bank-sampah-view', [ViewController::class, 'bankSampah']);
 });

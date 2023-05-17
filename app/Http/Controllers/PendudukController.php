@@ -46,10 +46,18 @@ class PendudukController extends Controller
             'rw' => 'required',
             'alamat' => 'required',
             'no_tlp' => 'required',
+            'dusun' => 'required',
         ]);
 
         //kalau mau pakai yang multiple  yang  bawah sama yang atas di kasih tag komentar
         Penduduk::create($request->all());
+        User::create([
+            'name' => $request->nama,
+            'nik' => $request->nik,
+            'email' => $request->nik.'@gmail.com',
+            'password' => Hash::make($request->nik),
+            'role' => 'user'
+        ]);
 
         // val ini untuk multiple store
 
@@ -113,6 +121,7 @@ class PendudukController extends Controller
             'rw' => 'required',
             'alamat' => 'required',
             'no_tlp' => 'required',
+            'dusun' => 'required',
         ]);
 
         $penduduk->update($request->all());

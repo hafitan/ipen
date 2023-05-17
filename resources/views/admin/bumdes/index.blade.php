@@ -80,7 +80,7 @@
                   <select name="nik" class="form-control" id="">
                     <option value="">--pilih--</option>
                     @foreach ($penduduk as $pen)
-                        <option name="nik">{{ $pen->nik }}</option>
+                        <option name="nik" value="{{ $pen->nik }}">{{ $pen->nik }} -{{ $pen->nama }}</option>
                     @endforeach
                   </select>
               </div>

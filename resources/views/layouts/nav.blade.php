@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Informasi Penduduk</div>
+        <div class="sidebar-brand-text mx-3">diGARUTa</div>
     </a>
 
     <!-- Divider -->
@@ -38,41 +38,74 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
+@if (Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a class="nav-link" href="penduduk">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Penduduk</span></a>
+</li>
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="penduduk">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Penduduk</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
+<!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="/bank-sampah">
             <i class="fas fa-fw fa-table"></i>
             <span>Bank Sampah</span></a>
     </li>
 
-    <!-- Nav Item - Tables -->
+
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+    <a class="nav-link" href="/bumdes">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Bumdes</span></a>
+</li>
+
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+    <a class="nav-link" href="users">
+        <i class="fas fa-fw fa-table"></i>
+        <span>User</span></a>
+</li>
+
+
+@elseif(Auth::user()->role == 'banksampah')
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+    <a class="nav-link" href="/bank-sampah">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Bank Sampah</span></a>
+</li>
+
+@elseif(Auth::user()->role == 'bumdes')
+<li class="nav-item">
+    <a class="nav-link" href="/bumdes">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Bumdes</span></a>
+</li>
+@elseif(Auth::user()->role == 'penduduk')
+<li class="nav-item">
+    <a class="nav-link" href="penduduk">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Penduduk</span></a>
+</li>
+@elseif(Auth::user()->role == 'user')
     <li class="nav-item">
-        <a class="nav-link" href="/bumdes">
-            <i class="fas fa-fw fa-table"></i>
+        <a class="nav-link" href="penduduk-view">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Penduduk</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="bumdes-view">
+            <i class="fas fa-fw fa-chart-area"></i>
             <span>Bumdes</span></a>
     </li>
-
-    <!-- Nav Item - Tables -->
-    {{-- <li class="nav-item">
-        <a class="nav-link" href="/pengajuan-surat">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Pengajuan Surat</span></a>
-    </li> --}}
-
-    <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="users">
-            <i class="fas fa-fw fa-table"></i>
-            <span>User</span></a>
+        <a class="nav-link" href="bank-sampah-view">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Bank sampah</span></a>
     </li>
+@endif
+    <!-- Nav Item - Charts -->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

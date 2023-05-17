@@ -21,6 +21,7 @@
                             <th>Nama</th>
                             <th>Rt</th>
                             <th>Rw</th>
+                            <th>Dusun</th>
                             <th>Alamat</th>
                             <th>No HP</th>
                             <th width="200px">Action</th>
@@ -35,6 +36,7 @@
                                 <td>{{ $penduduk->nama }}</td>
                                 <td>{{ $penduduk->rt }}</td>
                                 <td>{{ $penduduk->rw }}</td>
+                                <td>{{ $penduduk->dusun }}</td>
                                 <td>{{ $penduduk->alamat }}</td>
                                 <td>{{ $penduduk->no_tlp }}</td>
                             <td>
@@ -98,6 +100,13 @@
                   <input type="number" name="rw" class="form-control" placeholder="rw" min="0">
               </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Dusun:</strong>
+                    <input type="text" name="dusun" class="form-control" placeholder="dusun">
+                </div>
+              </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">

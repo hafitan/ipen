@@ -47,8 +47,9 @@
                                     <option>PILIH</option>
                                     <option value="penduduk">Penduduk</option>
                                     <option value="bumdes">Bumdes</option>
-                                    <option value="banksampah">BankSampah</option>
+                                    <option value="banksampah">Bank sampah</option>
                                     <option value="admin">Admin</option>
+                                    <option value="user">User</option>
                                 </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">

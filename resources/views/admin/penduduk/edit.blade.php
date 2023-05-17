@@ -70,6 +70,13 @@
 
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Dusun:</strong>
+                    <input type="text" name="dusun" value="{{ $penduduk->dusun }}" class="form-control" placeholder="dusun">
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Alamat:</strong>
                     <input type="text" name="alamat" value="{{$penduduk->alamat}}" class="form-control">
                 </div>

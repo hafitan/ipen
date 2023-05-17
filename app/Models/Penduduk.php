@@ -16,6 +16,7 @@ class Penduduk extends Model
         'rt',
         'rw',
         'alamat',
-        'no_tlp'
+        'no_tlp',
+        'dusun',
     ];
 }

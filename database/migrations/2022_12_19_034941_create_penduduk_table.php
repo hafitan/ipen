@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('rt');
             $table->string('rw');
+            $table->string('dusun');
             $table->string('alamat');
             $table->string('no_tlp');
             $table->timestamps();

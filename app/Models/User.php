@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'nik',
         // 'level'    val ini harus di tambahin level
     ];
 
